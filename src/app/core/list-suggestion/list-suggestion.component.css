@@ -1,0 +1,150 @@
+/* Container */
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 28px;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Suggestion card */
+.suggestion-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin-bottom: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.suggestion-card h3 {
+  margin-top: 0;
+  color: #007bff;
+  font-size: 22px;
+}
+
+/* Badges for category & status */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 6px;
+}
+
+.category-badge {
+  background-color: #28a745; /* green */
+}
+
+.status-badge {
+  background-color: #ffc107; /* yellow */
+}
+
+.status-refusee {
+  background-color: #dc3545; /* red */
+}
+
+/* Paragraphs */
+.suggestion-card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+/* Actions */
+.actions {
+  margin-top: 12px;
+}
+
+button {
+  margin-right: 8px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Favorites section */
+.favorites {
+  margin-top: 30px;
+  background: #f9f9f9;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.favorites h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.favorites ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.favorites li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.favorites li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+  }
+
+  .suggestion-card {
+    padding: 16px;
+  }
+
+  button {
+    margin-bottom: 6px;
+  }
+}
