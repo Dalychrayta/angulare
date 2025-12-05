@@ -1,22 +1,46 @@
 .app-header {
-  padding: 20px 0;
-  background: linear-gradient(135deg, #007bff, #00c6ff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: linear-gradient(135deg, #4e73df, #1cc88a);
   color: white;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.app-header h1 {
+.header-left h1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
 }
 
-.app-header p {
-  margin: 5px 0 0;
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.navbar {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  opacity: 0.9;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 700;
 }

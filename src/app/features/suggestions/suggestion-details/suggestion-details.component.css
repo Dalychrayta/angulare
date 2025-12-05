@@ -1,0 +1,35 @@
+/* src/app/features/suggestions/suggestion-details/suggestion-details.component.css */
+.card {
+  border-radius: 16px !important;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2) !important;
+}
+
+.card-header {
+  padding: 1.5rem 2rem !important;
+}
+
+.badge {
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4) !important;
+}

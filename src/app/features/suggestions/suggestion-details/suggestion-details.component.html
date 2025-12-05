@@ -1,0 +1,60 @@
+<!-- src/app/features/suggestions/suggestion-details/suggestion-details.component.html -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+      
+      <!-- LA MÊME CARTE QUE DANS LA LISTE -->
+      <div class="card shadow-lg border-0 mb-4" *ngIf="suggestion">
+        <!-- Header violet identique -->
+        <div class="card-header bg-gradient text-white d-flex justify-content-between align-items-center rounded-top"
+             style="background: linear-gradient(45deg, #667eea, #764ba2) !important;">
+          <h3 class="mb-0 fw-bold">{{ suggestion.title }}</h3>
+          <span class="badge rounded-pill px-4 py-2 fs-6"
+                [ngClass]="{
+                  'bg-success': suggestion.status === 'acceptee',
+                  'bg-danger': suggestion.status === 'refusee',
+                  'bg-warning text-dark': suggestion.status === 'en_attente'
+                }">
+            {{ suggestion.status | titlecase }}
+          </span>
+        </div>
+
+        <div class="card-body p-4">
+          <div class="mb-4">
+            <h5 class="text-muted fw-bold">Description</h5>
+            <p class="lead">{{ suggestion.description }}</p>
+          </div>
+
+          <div class="row text-muted">
+            <div class="col-sm-6 mb-3">
+              <strong>Catégorie :</strong><br>
+              <span class="text-dark fw-bold">{{ suggestion.category }}</span>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <strong>Date :</strong><br>
+              <span class="text-dark fw-bold">{{ suggestion.date | date:'dd MMMM yyyy' }}</span>
+            </div>
+            <div class="col-sm-6">
+              <strong>ID :</strong><br>
+              <span class="text-dark fw-bold">#{{ suggestion.id }}</span>
+            </div>
+            <div class="col-sm-6">
+              <strong>Soumis le :</strong><br>
+              <span class="text-dark fw-bold">{{ suggestion.date | date:'fullDate' }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer avec bouton identique -->
+        <div class="card-footer bg-light text-center border-0">
+          <button class="btn btn-lg rounded-pill px-5 shadow-sm" 
+                  style="background: linear-gradient(45deg, #667eea, #764ba2); color: white;"
+                  (click)="back()">
+            Retour à la liste
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

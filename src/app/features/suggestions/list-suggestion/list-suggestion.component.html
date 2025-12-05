@@ -1,0 +1,43 @@
+<!-- src/app/features/suggestions/list-suggestion/list-suggestion.component.html -->
+<div class="suggestions-container">
+  <h2 class="page-title">Liste des suggestions</h2>
+
+  <!-- Recherche -->
+  <div class="search-bar">
+    <input type="text" placeholder="Rechercher par titre..." [(ngModel)]="searchTitle" class="search-input">
+    <input type="text" placeholder="Filtrer par catégorie..." [(ngModel)]="searchCategory" class="search-input">
+  </div>
+
+  <!-- Liste -->
+  <div class="suggestions-grid">
+    <div *ngFor="let suggestion of filteredSuggestions" class="suggestion-card">
+      <div class="card-header">
+        <h3>{{ suggestion.title }}</h3>
+        <span class="status-badge" [ngClass]="suggestion.status">
+          {{ suggestion.status | titlecase }}
+        </span>
+      </div>
+      <div class="card-body">
+        <p class="description">{{ suggestion.description }}</p>
+        <div class="meta">
+          <span class="category">{{ suggestion.category }}</span>
+          <span class="date">{{ suggestion.date | date:'dd MMM yyyy' }}</span>
+        </div>
+      </div>
+      <div class="card-footer" *ngIf="suggestion.status !== 'refusee'">
+        <button class="btn-like" (click)="like(suggestion)">
+          Like ({{ likes[suggestion.id] || 0 }})
+        </button>
+        <button class="btn-fav" (click)="addToFavorites(suggestion)">
+          Favoris
+        </button>
+        <button class="btn-details" [routerLink]="['/suggestions', suggestion.id]">
+          Détails
+        </button>
+      </div>
+      <div class="refused" *ngIf="suggestion.status === 'refusee'">
+        Suggestion refusée
+      </div>
+    </div>
+  </div>
+</div>
